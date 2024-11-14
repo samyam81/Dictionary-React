@@ -46,13 +46,13 @@ function Dictionary() {
   return (
     <div
       style={{
-        backgroundColor: "#800000",
+        backgroundColor: "#3C4C24",
         color: "#81D8D0",
         padding: "20px",
         maxWidth: "600px",
         margin: "auto",
         borderRadius: "8px",
-        fontFamily: "Arial, sans-serif",
+        fontFamily: "'Playfair Display', serif",
         textAlign: "center",
       }}
     >
@@ -61,7 +61,7 @@ function Dictionary() {
         type="text"
         value={word}
         onChange={(e) => setWord(e.target.value)}
-        placeholder="Enter a word" // Placeholder text
+        placeholder="Enter a word"
         style={{
           padding: "10px",
           width: "100%",
@@ -87,16 +87,22 @@ function Dictionary() {
         Get Definition
       </button>
       {loading && <p>Loading...</p>}
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {error && <p style={{ color: "#EC2D01" }}>{error}</p>}
       {wordData && (
         <>
-          <h1 style={{ fontSize: "2rem", margin: "20px 0 0" }}>
+          <h1
+            style={{
+              fontSize: "2.5rem",
+              margin: "20px 0 0",
+              fontWeight: "700",
+            }}
+          >
             {wordData.word}
           </h1>
-          <p style={{ fontSize: "1rem", color: "#888", fontStyle: "italic" }}>
+          <p style={{ fontSize: "1.2rem", color: "#888", fontStyle: "italic" }}>
             {wordData.type}
           </p>
-          <p style={{ fontSize: "1.5rem", margin: "10px 0" }}>
+          <p style={{ fontSize: "1.6rem", margin: "10px 0" }}>
             {wordData.definition}
           </p>
           <p style={{ color: "#aaa", fontSize: "1rem" }}>
