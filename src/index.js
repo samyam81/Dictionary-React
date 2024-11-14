@@ -1,4 +1,3 @@
-// index.js
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Dictionary from "./Dictionary";
@@ -10,6 +9,7 @@ function App() {
         margin: 30,
         fontSize: "32px",
         textAlign: "center",
+        border: "1px solid white", 
       }}
     >
       <Dictionary />
