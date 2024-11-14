@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 
 function Dictionary() {
-  const [word, setWord] = useState(""); 
-  const [wordData, setWordData] = useState(null); 
-  const [loading, setLoading] = useState(false); 
-  const [error, setError] = useState(null); 
+  const [word, setWord] = useState("");
+  const [wordData, setWordData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const fetchWordDefinition = async () => {
-    if (!word) return;
+    if (!word) {
+      setError("Please enter a word.");
+      return;
+    }
 
     setLoading(true);
     setError(null);
@@ -43,19 +46,22 @@ function Dictionary() {
   return (
     <div
       style={{
+        backgroundColor: "#800000",
         color: "#81D8D0",
         padding: "20px",
         maxWidth: "600px",
         margin: "auto",
         borderRadius: "8px",
         fontFamily: "Arial, sans-serif",
+        textAlign: "center",
       }}
     >
+      <h1>Dictionary-React</h1>
       <input
         type="text"
         value={word}
         onChange={(e) => setWord(e.target.value)}
-        placeholder="Enter a word"
+        placeholder="Enter a word" // Placeholder text
         style={{
           padding: "10px",
           width: "100%",
